@@ -1,7 +1,3 @@
-@import '../logo';
-@import './address';
-@import './subscribe';
-
 .footer{
   padding-top: 60px;
   padding-bottom: 60px;
@@ -9,21 +5,58 @@
 
   &__container {
     display: flex;
-    align-items: baseline;
+    
+    @media screen and (max-width: 767px) {
+      max-width: 100%;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+
+    @media screen and (max-width: 1199px) {
+      flex-wrap: wrap;
+      justify-content: space-around;
+      align-items: center;
+      text-align: center;
+    }
+
+    @media screen and (min-width: 1200px) {
+      align-items: baseline;
+    }
   }
 }
 
-.footer__contact {
-  margin-right: 70px;
+.footer__item{
+  @media screen and (max-width: 767px) {
+    &:last-child {
+      width: 100%;
+    }
+  }
+
+  @media screen and (max-width: 1199px) {
+    &:not(:last-child) {
+      margin-bottom: 60px;
+    }
+  }
+
+  @media screen and (min-width: 1200px) {
+    &:not(:last-child) {
+      margin-right: 70px;
+    }
+  
+    &:last-child{
+        flex-grow: 1;
+    }
+  }
 }
 
 .footer__logo {
   margin-bottom: 20px;
   color: #fff;
-}
 
-.footer__social{
-  margin-right: 70px;
+  &:hover{
+  color: #fff;
+  }
 }
 
 .footer__txt {
@@ -35,8 +68,4 @@
   letter-spacing: 0.03em;
   color: $second-txt-color;
   text-transform: uppercase;
-}
-
-.footer__form {
-  flex-grow: 1;
 }

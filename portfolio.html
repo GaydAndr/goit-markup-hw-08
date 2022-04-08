@@ -18,44 +18,77 @@
 
 <body>
   <header class="header ">
-    <div class="container header-container">
-      <a href="./index.html" class="logo header-logo"><span class="logo__txt logo__txt--accent">Web</span><span
+    <div class="container header__container">
+      <a href="./index.html" class="logo header__logo"><span class="logo__txt logo__txt--accent">Web</span><span
           class="logo__txt">Studio</span></a>
-      <nav class="nav">
-        <ul class="nav__list ">
-          <li class="nav__item">
-            <a href="./index.html" class="nav__link  ">Студия</a>
+      <button type="button" class="burger" aria-expanded="false" aria-controls="menu" data-menu-button>
+        <svg class="icon burger__icon burger__icon--open" width="40" height="40">
+          <use href="./images/icons.svg#burger-menu"></use>
+        </svg>
+        <svg class="icon burger__icon burger__icon--close" width="40" height="40">
+          <use href="./images/icons.svg#close-menu"></use>
+        </svg>
+      </button>
+      <div class="menu" id="menu" data-menu>
+        <nav class="nav">
+          <ul class="nav__list ">
+            <li class="nav__item">
+              <a href="./index.html" class="nav__link  ">Студия</a>
+            </li>
+            <li class="nav__item">
+              <a href="./portfolio.html" class="nav__link nav__link--current">Портфолио</a>
+            </li>
+            <li class="nav__item">
+              <a href="" class="nav__link ">Контакты</a>
+            </li>
+          </ul>
+        </nav>
+        <ul class="contacts">
+          <li class="contacts__item">
+            <a href="mailto:info@devstudio.com" class="contacts__link">
+              <svg class="icon contacts__icon" width="16" height="12">
+                <use href="./images/icons.svg#icon-envelope"></use>
+              </svg>
+              info@devstudio.com
+            </a>
           </li>
-          <li class="nav__item">
-            <a href="./portfolio.html" class="nav__link nav__link--current ">Портфолaио</a>
-          </li>
-          <li class="nav__item">
-            <a href="" class="nav__link ">Контакты</a>
+          <li class="contacts__item">
+            <a href="tel:+380961111111" class="contacts__link">
+              <svg class="icon contacts__icon" width="10" height="16">
+                <use href="./images/icons.svg#icon-smartphone"></use>
+              </svg>
+              +38 096 111 11 11
+            </a>
           </li>
         </ul>
-      </nav>
-      <ul class="header__contacts">
-        <li class="header__item">
-          <a href="mailto:info@devstudio.com" class="header__link">
-            <svg class="icon header__icon" width="16" height="12">
-              <use href="./images/icons.svg#icon-envelope"></use>
-            </svg>
-            info@devstudio.com
-          </a>
-        </li>
-        <li class="header__item">
-          <a href="tel:+380961111111" class="header__link">
-            <svg class="icon header__icon" width="10" height="16">
-              <use href="./images/icons.svg#icon-smartphone"></use>
-            </svg>
-            +38 096 111 11 11
-          </a>
-        </li>
-      </ul>
+        <ul class="social-links menu__social-links">
+          <li class="social-links__item">
+            <a href="" class="social-links__link" target="_blank" rel="noopener noreferrer">
+              <span class="social-txt">Instagram</span>
+            </a>
+          </li>
+          <li class="social-links__item">
+            <a href="" class="social-links__link" target="_blank" rel="noopener noreferrer">
+              <span class="social-txt">Twitter</span>
+            </a>
+          </li>
+          <li class="social-links__item">
+            <a href="" class="social-links__link" target="_blank" rel="noopener noreferrer">
+              <span class="social-txt">Facebook</span>
+            </a>
+          </li>
+          <li class="social-links__item">
+            <a href="" class="social-links__link" target="_blank" rel="noopener noreferrer">
+              <span class="social-txt">LinkedIn</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+
     </div>
   </header>
   <main>
-    <section class="product section ">
+    <section class="section section--mt">
       <div class="container">
         <h1 class="visually-hidden">Портфоліо</h1>
         <ul class="filter ">
@@ -75,11 +108,29 @@
             <button type="button" class="filter__btn">Маркетинг</button>
           </li>
         </ul>
-        <ul class="product__list ">
+        <ul class="product ">
           <li class="product__item">
             <a href="" class="card">
               <div class="card__img-txt">
-                <img src="./images/portfolio/project-1.jpg" alt="Технокряк" width="370" height="294" />
+                <picture>
+                  <source
+                    srcset="./images/portfolio/project_1-450.webp 450w, ./images/portfolio/project_1-900.webp 900w"
+                    media="(max-width: 767px)" type="image/webp">
+                  <source
+                    srcset="./images/portfolio/project_1-354.webp 354w, ./images/portfolio/project_1-708.webp 708w"
+                    media="(min-width: 768px) and (max-width: 1199px)" type="image/webp">
+                  <source
+                    srcset="./images/portfolio/project_1-370.webp 370w, ./images/portfolio/project_1-740.webp 740w"
+                    media="(min-width: 1200px)" type="image/webp">
+
+                  <source srcset="./images/portfolio/project_1-450.jpg 450w, ./images/portfolio/project_1-450.jpg 900w"
+                    media="(max-width: 767px)" sizes="100vw">
+                  <source srcset="./images/portfolio/project_1-354.jpg 354w, ./images/portfolio/project_1-708.jpg 708w"
+                    media="(min-width: 768px) and (max-width: 1199px)" sizes="50vw">
+                  <source srcset="./images/portfolio/project_1-370.jpg 370w, ./images/portfolio/project_1-740.jpg 740w"
+                    media="(min-width: 1200px)" sizes="25vw">
+                  <img class="card__photo" src="./images/portfolio/project_1-354.jpg" alt="Игорь Демьяненко">
+                </picture>
                 <p class="card__txt">Технокряк это современная площадка распространения коронавируса. Компании
                   используют эту
                   платформу для цифрового шпионажа и атак на защищённые сервера конкурентов.</p>
@@ -93,8 +144,25 @@
           <li class="product__item">
             <a href="" class="card">
               <div class="card__img-txt">
-                <img src="./images/portfolio/project-2.jpg" alt="Постер New Orlean vs Golden Star" width="370"
-                  height="294" />
+                <picture>
+                  <source
+                    srcset="./images/portfolio/project_2-450.webp 450w, ./images/portfolio/project_2-900.webp 900w"
+                    media="(max-width: 767px)" type="image/webp">
+                  <source
+                    srcset="./images/portfolio/project_2-354.webp 354w, ./images/portfolio/project_2-708.webp 708w"
+                    media="(min-width: 768px) and (max-width: 1199px)" type="image/webp">
+                  <source
+                    srcset="./images/portfolio/project_2-370.webp 370w, ./images/portfolio/project_2-740.webp 740w"
+                    media="(min-width: 1200px)" type="image/webp">
+
+                  <source srcset="./images/portfolio/project_2-450.jpg 450w, ./images/portfolio/project_2-450.jpg 900w"
+                    media="(max-width: 767px)" sizes="100vw">
+                  <source srcset="./images/portfolio/project_2-354.jpg 354w, ./images/portfolio/project_2-708.jpg 708w"
+                    media="(min-width: 768px) and (max-width: 1199px)" sizes="50vw">
+                  <source srcset="./images/portfolio/project_2-370.jpg 370w, ./images/portfolio/project_2-740.jpg 740w"
+                    media="(min-width: 1200px)" sizes="25vw">
+                  <img class="card__photo" src="./images/portfolio/project_2-354.jpg" alt="Игорь Демьяненко">
+                </picture>
                 <p class="card__txt">Технокряк это современная площадка распространения коронавируса. Компании
                   используют эту
                   платформу для цифрового шпионажа и атак на защищённые сервера конкурентов.</p>
@@ -108,7 +176,25 @@
           <li class="product__item">
             <a href="" class="card">
               <div class="card__img-txt">
-                <img src="./images/portfolio/project-3.jpg" alt="Ресторан Seafood" width="370" height="294" />
+                <picture>
+                  <source
+                    srcset="./images/portfolio/project_3-450.webp 450w, ./images/portfolio/project_3-900.webp 900w"
+                    media="(max-width: 767px)" type="image/webp">
+                  <source
+                    srcset="./images/portfolio/project_3-354.webp 354w, ./images/portfolio/project_3-708.webp 708w"
+                    media="(min-width: 768px) and (max-width: 1199px)" type="image/webp">
+                  <source
+                    srcset="./images/portfolio/project_3-370.webp 370w, ./images/portfolio/project_3-740.webp 740w"
+                    media="(min-width: 1200px)" type="image/webp">
+
+                  <source srcset="./images/portfolio/project_3-450.jpg 450w, ./images/portfolio/project_3-450.jpg 900w"
+                    media="(max-width: 767px)" sizes="100vw">
+                  <source srcset="./images/portfolio/project_3-354.jpg 354w, ./images/portfolio/project_3-708.jpg 708w"
+                    media="(min-width: 768px) and (max-width: 1199px)" sizes="50vw">
+                  <source srcset="./images/portfolio/project_3-370.jpg 370w, ./images/portfolio/project_3-740.jpg 740w"
+                    media="(min-width: 1200px)" sizes="25vw">
+                  <img class="card__photo" src="./images/portfolio/project_3-354.jpg" alt="Игорь Демьяненко">
+                </picture>
                 <p class="card__txt">Технокряк это современная площадка распространения коронавируса. Компании
                   используют эту
                   платформу для цифрового шпионажа и атак на защищённые сервера конкурентов.</p>
@@ -122,7 +208,25 @@
           <li class="product__item">
             <a href="" class="card">
               <div class="card__img-txt">
-                <img src="./images/portfolio/project-4.jpg" alt="Проект Prime" width="370" height="294" />
+                <picture>
+                  <source
+                    srcset="./images/portfolio/project_4-450.webp 450w, ./images/portfolio/project_4-900.webp 900w"
+                    media="(max-width: 767px)" type="image/webp">
+                  <source
+                    srcset="./images/portfolio/project_4-354.webp 354w, ./images/portfolio/project_4-708.webp 708w"
+                    media="(min-width: 768px) and (max-width: 1199px)" type="image/webp">
+                  <source
+                    srcset="./images/portfolio/project_4-370.webp 370w, ./images/portfolio/project_4-740.webp 740w"
+                    media="(min-width: 1200px)" type="image/webp">
+
+                  <source srcset="./images/portfolio/project_4-450.jpg 450w, ./images/portfolio/project_4-450.jpg 900w"
+                    media="(max-width: 767px)" sizes="100vw">
+                  <source srcset="./images/portfolio/project_4-354.jpg 354w, ./images/portfolio/project_4-708.jpg 708w"
+                    media="(min-width: 768px) and (max-width: 1199px)" sizes="50vw">
+                  <source srcset="./images/portfolio/project_4-370.jpg 370w, ./images/portfolio/project_4-740.jpg 740w"
+                    media="(min-width: 1200px)" sizes="25vw">
+                  <img class="card__photo" src="./images/portfolio/project_4-354.jpg" alt="Игорь Демьяненко">
+                </picture>
                 <p class="card__txt">Технокряк это современная площадка распространения коронавируса. Компании
                   используют эту
                   платформу для цифрового шпионажа и атак на защищённые сервера конкурентов.</p>
@@ -136,7 +240,25 @@
           <li class="product__item">
             <a href="" class="card">
               <div class="card__img-txt">
-                <img src="./images/portfolio/project-5.jpg" alt="Проект Boxes" width="370" height="294" />
+                <picture>
+                  <source
+                    srcset="./images/portfolio/project_5-450.webp 450w, ./images/portfolio/project_5-900.webp 900w"
+                    media="(max-width: 767px)" type="image/webp">
+                  <source
+                    srcset="./images/portfolio/project_5-354.webp 354w, ./images/portfolio/project_5-708.webp 708w"
+                    media="(min-width: 768px) and (max-width: 1199px)" type="image/webp">
+                  <source
+                    srcset="./images/portfolio/project_5-370.webp 370w, ./images/portfolio/project_5-740.webp 740w"
+                    media="(min-width: 1200px)" type="image/webp">
+
+                  <source srcset="./images/portfolio/project_5-450.jpg 450w, ./images/portfolio/project_5-450.jpg 900w"
+                    media="(max-width: 767px)" sizes="100vw">
+                  <source srcset="./images/portfolio/project_5-354.jpg 354w, ./images/portfolio/project_5-708.jpg 708w"
+                    media="(min-width: 768px) and (max-width: 1199px)" sizes="50vw">
+                  <source srcset="./images/portfolio/project_5-370.jpg 370w, ./images/portfolio/project_5-740.jpg 740w"
+                    media="(min-width: 1200px)" sizes="25vw">
+                  <img class="card__photo" src="./images/portfolio/project_5-354.jpg" alt="Игорь Демьяненко">
+                </picture>
                 <p class="card__txt">Технокряк это современная площадка распространения коронавируса. Компании
                   используют эту
                   платформу для цифрового шпионажа и атак на защищённые сервера конкурентов.</p>
@@ -150,7 +272,25 @@
           <li class="product__item">
             <a href="" class="card">
               <div class="card__img-txt">
-                <img src="./images/portfolio/project-6.jpg" alt="Inspiration has no Borders" width="370" height="294" />
+                <picture>
+                  <source
+                    srcset="./images/portfolio/project_6-450.webp 450w, ./images/portfolio/project_6-900.webp 900w"
+                    media="(max-width: 767px)" type="image/webp">
+                  <source
+                    srcset="./images/portfolio/project_6-354.webp 354w, ./images/portfolio/project_6-708.webp 708w"
+                    media="(min-width: 768px) and (max-width: 1199px)" type="image/webp">
+                  <source
+                    srcset="./images/portfolio/project_6-370.webp 370w, ./images/portfolio/project_6-740.webp 740w"
+                    media="(min-width: 1200px)" type="image/webp">
+
+                  <source srcset="./images/portfolio/project_6-450.jpg 450w, ./images/portfolio/project_6-450.jpg 900w"
+                    media="(max-width: 767px)" sizes="100vw">
+                  <source srcset="./images/portfolio/project_6-354.jpg 354w, ./images/portfolio/project_6-708.jpg 708w"
+                    media="(min-width: 768px) and (max-width: 1199px)" sizes="50vw">
+                  <source srcset="./images/portfolio/project_6-370.jpg 370w, ./images/portfolio/project_6-740.jpg 740w"
+                    media="(min-width: 1200px)" sizes="25vw">
+                  <img class="card__photo" src="./images/portfolio/project_6-354.jpg" alt="Игорь Демьяненко">
+                </picture>
                 <p class="card__txt">Технокряк это современная площадка распространения коронавируса. Компании
                   используют эту
                   платформу для цифрового шпионажа и атак на защищённые сервера конкурентов.</p>
@@ -164,7 +304,25 @@
           <li class="product__item">
             <a href="" class="card">
               <div class="card__img-txt">
-                <img src="./images/portfolio/project-7.jpg" alt="Издание Limited Edition" width="370" height="294" />
+                <picture>
+                  <source
+                    srcset="./images/portfolio/project_7-450.webp 450w, ./images/portfolio/project_7-900.webp 900w"
+                    media="(max-width: 767px)" type="image/webp">
+                  <source
+                    srcset="./images/portfolio/project_7-354.webp 354w, ./images/portfolio/project_7-708.webp 708w"
+                    media="(min-width: 768px) and (max-width: 1199px)" type="image/webp">
+                  <source
+                    srcset="./images/portfolio/project_7-370.webp 370w, ./images/portfolio/project_7-740.webp 740w"
+                    media="(min-width: 1200px)" type="image/webp">
+
+                  <source srcset="./images/portfolio/project_7-450.jpg 450w, ./images/portfolio/project_7-450.jpg 900w"
+                    media="(max-width: 767px)" sizes="100vw">
+                  <source srcset="./images/portfolio/project_7-354.jpg 354w, ./images/portfolio/project_7-708.jpg 708w"
+                    media="(min-width: 768px) and (max-width: 1199px)" sizes="50vw">
+                  <source srcset="./images/portfolio/project_7-370.jpg 370w, ./images/portfolio/project_7-740.jpg 740w"
+                    media="(min-width: 1200px)" sizes="25vw">
+                  <img class="card__photo" src="./images/portfolio/project_7-354.jpg" alt="Игорь Демьяненко">
+                </picture>
                 <p class="card__txt">Технокряк это современная площадка распространения коронавируса. Компании
                   используют эту
                   платформу для цифрового шпионажа и атак на защищённые сервера конкурентов.</p>
@@ -178,7 +336,25 @@
           <li class="product__item">
             <a href="" class="card">
               <div class="card__img-txt">
-                <img src="./images/portfolio/project-8.jpg" alt="Проект LAB" width="370" height="294" />
+                <picture>
+                  <source
+                    srcset="./images/portfolio/project_8-450.webp 450w, ./images/portfolio/project_8-900.webp 900w"
+                    media="(max-width: 767px)" type="image/webp">
+                  <source
+                    srcset="./images/portfolio/project_8-354.webp 354w, ./images/portfolio/project_8-708.webp 708w"
+                    media="(min-width: 768px) and (max-width: 1199px)" type="image/webp">
+                  <source
+                    srcset="./images/portfolio/project_8-370.webp 370w, ./images/portfolio/project_8-740.webp 740w"
+                    media="(min-width: 1200px)" type="image/webp">
+
+                  <source srcset="./images/portfolio/project_8-450.jpg 450w, ./images/portfolio/project_8-450.jpg 900w"
+                    media="(max-width: 767px)" sizes="100vw">
+                  <source srcset="./images/portfolio/project_8-354.jpg 354w, ./images/portfolio/project_8-708.jpg 708w"
+                    media="(min-width: 768px) and (max-width: 1199px)" sizes="50vw">
+                  <source srcset="./images/portfolio/project_8-370.jpg 370w, ./images/portfolio/project_8-740.jpg 740w"
+                    media="(min-width: 1200px)" sizes="25vw">
+                  <img class="card__photo" src="./images/portfolio/project_8-354.jpg" alt="Игорь Демьяненко">
+                </picture>
                 <p class="card__txt">Технокряк это современная площадка распространения коронавируса. Компании
                   используют эту
                   платформу для цифрового шпионажа и атак на защищённые сервера конкурентов.</p>
@@ -192,7 +368,25 @@
           <li class="product__item">
             <a href="" class="card">
               <div class="card__img-txt">
-                <img src="./images/portfolio/project-9.jpg" alt="Growing Business" width="370" height="294" />
+                <picture>
+                  <source
+                    srcset="./images/portfolio/project_9-450.webp 450w, ./images/portfolio/project_9-900.webp 900w"
+                    media="(max-width: 767px)" type="image/webp">
+                  <source
+                    srcset="./images/portfolio/project_9-354.webp 354w, ./images/portfolio/project_9-708.webp 708w"
+                    media="(min-width: 768px) and (max-width: 1199px)" type="image/webp">
+                  <source
+                    srcset="./images/portfolio/project_9-370.webp 370w, ./images/portfolio/project_9-740.webp 740w"
+                    media="(min-width: 1200px)" type="image/webp">
+
+                  <source srcset="./images/portfolio/project_9-450.jpg 450w, ./images/portfolio/project_9-450.jpg 900w"
+                    media="(max-width: 767px)" sizes="100vw">
+                  <source srcset="./images/portfolio/project_9-354.jpg 354w, ./images/portfolio/project_9-708.jpg 708w"
+                    media="(min-width: 768px) and (max-width: 1199px)" sizes="50vw">
+                  <source srcset="./images/portfolio/project_9-370.jpg 370w, ./images/portfolio/project_9-740.jpg 740w"
+                    media="(min-width: 1200px)" sizes="25vw">
+                  <img class="card__photo" src="./images/portfolio/project_9-354.jpg" alt="Игорь Демьяненко">
+                </picture>
                 <p class="card__txt">Технокряк это современная площадка распространения коронавируса. Компании
                   используют эту
                   платформу для цифрового шпионажа и атак на защищённые сервера конкурентов.</p>
@@ -203,13 +397,14 @@
               </div>
             </a>
           </li>
+
         </ul>
       </div>
     </section>
   </main>
   <footer class="footer ">
     <div class="container footer__container">
-      <div class="footer__contact">
+      <div class="footer__item ">
         <a href="./index.html" class="logo footer__logo"><span class="logo__txt logo__txt--accent">Web</span><span
             class="logo__txt">Studio</span></a>
         <address class="address">
@@ -229,7 +424,7 @@
           </ul>
         </address>
       </div>
-      <div class="footer__social">
+      <div class="footer__item ">
         <p class="footer__txt">присоединяйтесь</p>
         <ul class="social-links ">
           <li class="social-links__item footer-social-links__item">
@@ -262,7 +457,7 @@
           </li>
         </ul>
       </div>
-      <form class="footer__form">
+      <form class="footer__item ">
         <p class="footer__txt ">Подпишитесь на рассылку</p>
         <div class="subscribe">
           <label class="subscribe__label">
@@ -279,7 +474,7 @@
     </div>
   </footer>
 
-  <div class="backdrop is-hidden" data-backdrop>
+  <!-- <div class="backdrop is-hidden" data-backdrop>
     <div class="modal">
       <button class="close" type="button" data-close-modal>
         <svg class="icon" width="10" height="16">
@@ -287,9 +482,11 @@
         </svg>
       </button>
     </div>
-  </div>
+  </div> -->
 
-  <script src="./js/modal.js"></script>
+
+  <script src="./js/menu.js"></script>
+  <!-- <script src="./js/modal.js"></script> -->
 </body>
 
 </html>

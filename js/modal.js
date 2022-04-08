@@ -7,12 +7,7 @@ const refs = {
 refs.openModalBtn.addEventListener("click", toggleModal);
 refs.closeModalBtn.addEventListener("click", toggleModal);
 
-refs.backdrop.addEventListener("click", logBackdropClick);
-
 function toggleModal() {
+	document.body.classList.toggle("lock-form");
 	refs.backdrop.classList.toggle("is-hidden");
-}
-
-function logBackdropClick() {
-	console.log("Клік в бекдроп");
 }

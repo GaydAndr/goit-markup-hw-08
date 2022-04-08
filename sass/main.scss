@@ -1,14 +1,15 @@
-@import 'utils/variables';
-@import 'utils/visually-hidden';
-@import 'utils/placeholders';
+@import 'utils/index';
 @import 'base/general';
+@import 'common/container';
+@import 'common/section';
 @import 'components/backdrop';
-@import 'components/header/header';
+@import 'components/button';
+@import 'components/header/index';
 @import 'components/hero';
 @import 'components/features';
 @import 'components/our-works';
 @import 'components/our-team';
 @import 'components/regular-customers';
-@import 'components/footer/footer';
-@import 'components/product/product';
+@import 'components/footer/index';
+@import 'components/product/index';
 

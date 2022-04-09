@@ -1087,7 +1087,7 @@ a:focus {
 }
 
 @media screen and (max-width: 767px) {
-  .social-links__item:not(:last-child) {
+  .social-links__item--mobi-menu:not(:last-child) {
     padding-right: 10px;
     border-right: 1px solid rgba(33, 33, 33, 0.2);
   }
@@ -1117,11 +1117,11 @@ a:focus {
 }
 
 @media screen and (max-width: 767px) {
-  .social-links__link {
+  .social-links__link--mobi-menu {
     width: auto;
     height: auto;
   }
-  .social-links__link:hover, .social-links__link:focus {
+  .social-links__link--mobi-menu:hover, .social-links__link--mobi-menu:focus {
     background-color: currentColor;
     border-radius: 0;
   }

@@ -16,11 +16,10 @@
     @media screen and (max-width: 1199px) {
       flex-wrap: wrap;
       justify-content: space-around;
-      align-items: center;
       text-align: center;
     }
 
-    @media screen and (min-width: 1200px) {
+    @media screen and (min-width: 768px) {
       align-items: baseline;
     }
   }
@@ -34,8 +33,8 @@
   }
 
   @media screen and (max-width: 1199px) {
-    &:not(:last-child) {
-      margin-bottom: 60px;
+    &:last-child {
+      margin-top: 60px;
     }
   }
 

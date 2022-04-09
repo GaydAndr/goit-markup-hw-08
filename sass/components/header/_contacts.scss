@@ -42,7 +42,7 @@
     }
   }
 
-  @media screen and (min-width: 768px) {
+  @media screen and (min-width: 768px) and (max-width:1199px) {
     &:not(:last-child) {
       margin-bottom: 10px;
     }
@@ -58,6 +58,7 @@
 .contacts__link {
   color: $main-txt-color;
   display: flex;
+  align-items: center;
   
   @media screen and (max-width: 767px) {
     color: inherit;

@@ -16,12 +16,15 @@
     margin-right: 10px;
   }
 
-  @media screen and (max-width: 767px) {
-    &:not(:last-child) {
-      padding-right: 10px;
-      border-right: 1px solid rgba(33, 33, 33, 0.2);
+  &--mobi-menu{
+    @media screen and (max-width: 767px) {
+      &:not(:last-child) {
+        padding-right: 10px;
+        border-right: 1px solid rgba(33, 33, 33, 0.2);
+      }
     }
   }
+
 }
 
 .social-links__link{
@@ -42,14 +45,16 @@
     background-color: $accent-color;
   }
 
-  @media screen and (max-width: 767px) {
-    width: auto;
-    height: auto;
-
-    &:hover,
-    &:focus {
-      background-color: currentColor;
-      border-radius: 0;
+  &--mobi-menu{
+    @media screen and (max-width: 767px) {
+      width: auto;
+      height: auto;
+  
+      &:hover,
+      &:focus {
+        background-color: currentColor;
+        border-radius: 0;
+      }
     }
   }
 }
